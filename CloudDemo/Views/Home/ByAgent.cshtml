@@ -1,0 +1,87 @@
+﻿@model CloudDemo.ViewModels.DeviceInfoViewModel
+
+@{
+    var ua = Request.UserAgent;
+    if (Model != null)
+    {
+        ua = Model.UserAgent;
+    }
+}
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Detect from user agent" />
+    <hr />
+    <span id="UA"><b>UA to detect:<br /></b>
+    <input type="text" name="userAgent" style="width:600px" value="@ua" /></span>
+}
+
+<h3>Cookies</h3>
+<ul>
+@foreach (var c in Request.Cookies)
+{
+    <li>@c.ToString()</li>
+}
+</ul>
+<hr />
+
+@if (Model == null)
+{
+    return;
+}
+
+<div><b>Response:&nbsp;</b> @Model.Source.ToString() </div>
+<br />
+
+<fieldset>
+<legend>General</legend>
+<table>
+    <tr>
+        <td><b>Library Version</b></td>
+        <td>@Model.Library</td>
+    </tr>
+    <tr>
+        <td><b>Server Version</b></td>
+        <td>@Model.ServerVersion</td>
+    </tr>
+    <tr>
+        <td><b>Caching Module</b></td>
+        <td>@Model.CachingModule</td>
+    </tr>
+    <tr>
+        <td><b>WURFL server timestamp</b></td>
+        <td>@Model.DateOfRequest</td>
+    </tr>
+    <tr>
+        <td><b>Detected device ID</b></td>
+        <td>@Model.DeviceId</td>
+    </tr>
+</table>
+</fieldset>
+
+<fieldset>
+<legend>Capabilities</legend>
+<table>
+<tr><td>UA</td><td>@Model.UserAgent</td></tr>
+@foreach (var c in Model.Capabilities)
+{
+    <tr>
+        <td><b>@c.Key</b></td>
+        <td><b>@c.Value</b></td>
+    </tr>
+}
+</table>
+</fieldset>
+
+<fieldset>
+<legend>Errors</legend>
+<table>
+@foreach (var c in Model.Errors)
+{
+    <tr>
+        <td><b>@c.Key</b></td>
+        <td><b>@c.Value</b></td>
+    </tr>
+}
+</table>
+</fieldset>

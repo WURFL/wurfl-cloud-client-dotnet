@@ -1,0 +1,14 @@
+v1.2.0.0
+- ENH: unified project to support both .NET 2.0 and .NET4.0
+- ENH: merged CloudClient DemoBase and DemoPremium projects 
+
+v1.1.0.2
+- FIX: "API NOT PROVIDED" exception;
+- All the http exception are now collected in DeviceInfo.Errors; 
+- Add TIMEOUT (http) error.
+
+v1.1.0.1
+- ENH: improved errors handling
+
+v1.1
+- Initial release

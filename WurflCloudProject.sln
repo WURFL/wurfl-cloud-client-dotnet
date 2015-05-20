@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScientiaMobile.WurflCloud", "Client\WurflCloud\ScientiaMobile.WurflCloud.csproj", "{9105426F-7BED-4F7B-9F7E-1A173C8551B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDemo", "CloudDemo\CloudDemo.csproj", "{50214668-4903-481D-AD6C-6273AEDABE94}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7} = {9105426F-7BED-4F7B-9F7E-1A173C8551B7}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = WurflCloudProject.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9105426F-7BED-4F7B-9F7E-1A173C8551B7}.Release|x86.ActiveCfg = Release|Any CPU
+		{50214668-4903-481D-AD6C-6273AEDABE94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50214668-4903-481D-AD6C-6273AEDABE94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50214668-4903-481D-AD6C-6273AEDABE94}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{50214668-4903-481D-AD6C-6273AEDABE94}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{50214668-4903-481D-AD6C-6273AEDABE94}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{50214668-4903-481D-AD6C-6273AEDABE94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50214668-4903-481D-AD6C-6273AEDABE94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50214668-4903-481D-AD6C-6273AEDABE94}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{50214668-4903-481D-AD6C-6273AEDABE94}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{50214668-4903-481D-AD6C-6273AEDABE94}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
