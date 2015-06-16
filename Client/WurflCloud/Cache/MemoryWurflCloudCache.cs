@@ -14,6 +14,7 @@ using System;
 using System.Web;
 using ScientiaMobile.WurflCloud.Device;
 using ScientiaMobile.WurflCloud.Utils;
+using ScientiaMobile.WurflCloud.Exc;
 
 namespace ScientiaMobile.WurflCloud.Cache
 {

@@ -22,6 +22,7 @@ using ScientiaMobile.WurflCloud.Cache;
 using ScientiaMobile.WurflCloud.Config;
 using ScientiaMobile.WurflCloud.Device;
 using ScientiaMobile.WurflCloud.Utils;
+using ScientiaMobile.WurflCloud.Exc;
 using System.Collections.Specialized;
 
 namespace ScientiaMobile.WurflCloud.Http
