@@ -23,6 +23,7 @@ creating your account, and have selected the WURFL Capabilities that you
 would like to use, you must copy your API Key, as it will be needed in
 the Client.
 
+## Install [WURFL Cloud Client NuGet Package](https://www.nuget.org/packages/Wurfl_Official_Cloud_API/)
 
 ## Integration
 You should review the included example (CloudDemo) to get a feel for
