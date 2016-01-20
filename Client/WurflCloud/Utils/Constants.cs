@@ -22,7 +22,7 @@ namespace ScientiaMobile.WurflCloud.Utils
         /// <summary>
         /// The version of the current WURFL cloud client manager.
         /// </summary>
-        public const String ClientVersion = "WurflCloudClient/.NET_1.2.0.0";
+        public const String ClientVersion = "WurflCloudClient/.NET_1.3.0.0";
 
         /// <summary>
         /// The version of the current WURFL cloud client manager.
@@ -69,5 +69,11 @@ namespace ScientiaMobile.WurflCloud.Utils
         /// Security key used for demo purposes.
         /// </summary>
         public const String DemoKey = "100000:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+
+        /// <summary>
+        /// Default timeout values on connections
+        /// </summary>
+        public const Int32 DefaultConnectionTimeout = 5000;
+        public const Int32 DefaultReadTimeout = 10000;
     }
 }

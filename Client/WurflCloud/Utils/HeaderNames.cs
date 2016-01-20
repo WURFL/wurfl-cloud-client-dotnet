@@ -69,6 +69,11 @@ namespace ScientiaMobile.WurflCloud.Utils
         /// <summary>
         /// Custom header: used to pass info about the requesting IP 
         /// </summary>
-        public const String XForwardedFor = "X-Forwarded-For";    
+        public const String XForwardedFor = "X-Forwarded-For";
+
+        /// <summary>
+        /// Custom header: original Accept-Encoding header 
+        /// </summary>
+        public const String XAcceptEncoding = "X-Accept-Encoding";
     }
 }

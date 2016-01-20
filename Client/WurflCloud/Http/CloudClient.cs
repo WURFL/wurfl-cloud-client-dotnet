@@ -357,7 +357,7 @@ namespace ScientiaMobile.WurflCloud.Http
             if (!String.IsNullOrEmpty(ua))
             {
                 _userAgent = ua;
-                if (_reqHeaders.ContainsKey(HeaderNames.UserAgent))
+                if (!_reqHeaders.ContainsKey(HeaderNames.UserAgent))
                 {
                     _reqHeaders[HeaderNames.UserAgent] = ua;
                 }                      
@@ -394,7 +394,7 @@ namespace ScientiaMobile.WurflCloud.Http
         private void SetEncodingAccept()
         {
             if (_config.Compression)
-                AddRequestHeader(HeaderNames.AcceptEncoding, Encodings.Gzip.ToString());
+                AddRequestHeader(HeaderNames.XAcceptEncoding, Encodings.Gzip.ToString());
         }
 
         /// <summary>
@@ -457,6 +457,9 @@ namespace ScientiaMobile.WurflCloud.Http
                 throw new InvalidCastException("Not a HttpWebRequest object");
             
             webRequest.Proxy = _config.Proxy;
+
+            webRequest.Timeout = _config.ConnectionTimeout;
+            webRequest.ReadWriteTimeout = _config.ReadTimeout;
 
             // Copy given headers into the request object
             foreach(var header in headers)
