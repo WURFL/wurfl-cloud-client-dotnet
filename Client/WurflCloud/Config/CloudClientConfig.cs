@@ -48,6 +48,13 @@ namespace ScientiaMobile.WurflCloud.Config
         public WebProxy Proxy { get; set; }
 
         /// <summary>
+        /// The timeouts on connections
+        /// </summary>
+        public Int32 ConnectionTimeout { get; set; } = Constants.DefaultConnectionTimeout;
+        public Int32 ReadTimeout { get; set; } = Constants.DefaultReadTimeout;
+
+
+        /// <summary>
         /// Indicates whether GZIP compression is required from cloud server. 
         /// </summary>
         public Boolean Compression { get; set; }
@@ -61,7 +68,7 @@ namespace ScientiaMobile.WurflCloud.Config
         /// <summary>
         /// Empty the list of WURFL cloud servers.
         /// </summary> 
-        protected void ClearCloudServers()
+        public void ClearCloudServers()
         {
             AvailableCloudServers.Clear(); 
         }
@@ -69,12 +76,12 @@ namespace ScientiaMobile.WurflCloud.Config
         /// <summary>
         /// Add a new cloud server to the list.
         /// </summary>
-        protected void AddCloudServer(CloudServerConfig serverConfig)
+        public void AddCloudServer(CloudServerConfig serverConfig)
         {
             // AvailableCloudServers.Add(serverConfig.Nickname, serverConfig);
             AvailableCloudServers.Add(serverConfig);
         }
-        protected void AddCloudServer(String nickname, String url, Int32 weight = Constants.DefaultServerWeight)
+        public void AddCloudServer(String nickname, String url, Int32 weight = Constants.DefaultServerWeight)
         {
             // AvailableCloudServers.Add(nickname, new CloudServerConfig(nickname, url, weight));
             AvailableCloudServers.Add(new CloudServerConfig(nickname, url, weight));

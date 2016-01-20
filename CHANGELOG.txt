@@ -1,3 +1,8 @@
+v1.3.0.0
+- ENH: Added ConnectionTimeout (default 5000 mSec) and ReadTimeout (default 10000 mSec) configuration parameters.
+- FIX: Error on form_factor capability when using compressed response stream
+- ENH: Added a first set of NUnit tests
+
 v1.2.0.0
 - ENH: unified project to support both .NET 2.0 and .NET4.0
 - ENH: merged CloudClient DemoBase and DemoPremium projects 
