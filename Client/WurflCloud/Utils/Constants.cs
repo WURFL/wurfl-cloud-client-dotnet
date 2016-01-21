@@ -22,7 +22,7 @@ namespace ScientiaMobile.WurflCloud.Utils
         /// <summary>
         /// The version of the current WURFL cloud client manager.
         /// </summary>
-        public const String ClientVersion = "WurflCloudClient/.NET_1.3.0.0";
+        public const String ClientVersion = "WurflCloudClient/.NET_1.3.0.1";
 
         /// <summary>
         /// The version of the current WURFL cloud client manager.
