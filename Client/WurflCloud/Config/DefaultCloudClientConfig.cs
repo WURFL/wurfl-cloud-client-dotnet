@@ -26,6 +26,8 @@ namespace ScientiaMobile.WurflCloud.Config
         {
             ApiKey = key;
             Compression = enableCompression;
+            ConnectionTimeout = Constants.DefaultConnectionTimeout;
+            ReadTimeout = Constants.DefaultReadTimeout;
         }
     }
 }

@@ -1,3 +1,6 @@
+v1.3.0.1
+- FIX: syntax not backward compatible with VS2013
+
 v1.3.0.0
 - ENH: Added ConnectionTimeout (default 5000 mSec) and ReadTimeout (default 10000 mSec) configuration parameters.
 - FIX: Error on form_factor capability when using compressed response stream
