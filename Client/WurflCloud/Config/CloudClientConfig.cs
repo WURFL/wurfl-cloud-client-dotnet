@@ -50,8 +50,8 @@ namespace ScientiaMobile.WurflCloud.Config
         /// <summary>
         /// The timeouts on connections
         /// </summary>
-        public Int32 ConnectionTimeout { get; set; } = Constants.DefaultConnectionTimeout;
-        public Int32 ReadTimeout { get; set; } = Constants.DefaultReadTimeout;
+        public Int32 ConnectionTimeout { get; set; }
+        public Int32 ReadTimeout { get; set; }
 
 
         /// <summary>
