@@ -21,12 +21,12 @@ v1.3.0.0
         <tags>Cloud Mobile Phone ASP.NET WURFL Browser DDR Device Detection Data</tags>
     </metadata>
     <files>
-        <file src="Content\CHANGELOG.txt" target="Content\CHANGELOG.txt" />
-        <file src="Content\COPYING.txt" target="Content\COPYING.txt" />
+        <file src="..\CHANGELOG.txt" target="Content\CHANGELOG.txt" />
+        <file src="..\COPYING.txt" target="Content\COPYING.txt" />
         <file src="Content\MIT License.txt" target="Content\MIT License.txt" />
         <file src="Content\README.pdf" target="Content\README.pdf" />
         <file src="lib\Newtonsoft.Json.dll" target="lib\Newtonsoft.Json.dll" />
-        <file src="lib\ScientiaMobile.WurflCloud.dll" target="lib\ScientiaMobile.WurflCloud.dll" />
+        <file src="..\Client\WurflCloud\bin\Release\ScientiaMobile.WurflCloud.dll" target="lib\ScientiaMobile.WurflCloud.dll" />
         <file src="Tools\Install.ps1" target="Tools\Install.ps1" />
     </files>
 </package>
