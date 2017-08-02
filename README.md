@@ -68,17 +68,15 @@ public DeviceInfoViewModel GetDataByAgent(HttpContextBase context, String ua)
   };
   
   var manager = new CloudClientManager(config).SetCache(new MemoryWurflCloudCache());
-  var wurflRequest = new WurflCloudRequest(context) {UserAgent = ua};
   
   // Grab data
-  var info = manager.GetDeviceInfo(wurflRequest, new[] { "is_wireless_device", "is_smartphone", "physical_screen_width" });
+  var info = manager.GetDeviceInfo(ua, new[] { "is_wireless_device", "is_smartphone", "physical_screen_width" });
   var model = new DeviceInfoViewModel
   {
      DeviceId = info.Id,
      UserAgent = ua,
      ServerVersion = info.ServerVersion,
      DateOfRequest = info.WurflLastUpdate.ToLongTimeString(),
-     CachingModule = manager.GetCachingModuleName(),
      Library = manager.GetClientVersion(),
      Capabilities = info.Capabilities,
      Errors = info.Errors,
