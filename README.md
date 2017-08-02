@@ -29,24 +29,60 @@ the Client API, and how best to use it in your application.
 
 Here's a quick example of how to get up and running quickly:
 
+In CloudDemo\Services\Home\WurflService.cs set your personal ApiKey
+both in GetDataByRequest and GetDataByAgent methods.
+
+GetDataByRequest is an example on how to get capabilities starting from the HttpRequest.
+
 ```c#
 public DeviceInfoViewModel GetDataByRequest(HttpContext context)
 {
   var config = new DefaultCloudClientConfig
   {
-    ApiKey = "123456:xxxxxxxxxxxxxxxxxxxxxxxxxx"
+     ApiKey = "xxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   };
   var manager = new CloudClientManager(config);
   var info = manager.GetDeviceInfo(context, new[] { "is_wireless_device", "model_name" });
   var model = new DeviceInfoViewModel
   {
-      DeviceId = info.Id,
-      ServerVersion = info.ServerVersion,
-      DateOfRequest = info.WurflLastUpdate.ToString(),
-      Library = manager.GetClientVersion(),
-      Capabilities = info.Capabilities,
-      Errors = info.Errors,
-      Source = info.ResponseOrigin
+     DeviceId = info.Id,
+     ServerVersion = info.ServerVersion,
+     DateOfRequest = info.WurflLastUpdate.ToString(),
+     Library = manager.GetClientVersion(),
+     Capabilities = info.Capabilities,
+     Errors = info.Errors,
+     Source = info.ResponseOrigin
+  };
+  return model;
+}
+```
+
+GetDataByAgent is an example on how to get capabilities starting from a User-Agent string
+
+```c#
+public DeviceInfoViewModel GetDataByAgent(HttpContextBase context, String ua)
+{
+  var config = new DefaultCloudClientConfig
+  {
+  	 ApiKey = "xxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  };
+  
+  var manager = new CloudClientManager(config).SetCache(new MemoryWurflCloudCache());
+  var wurflRequest = new WurflCloudRequest(context) {UserAgent = ua};
+  
+  // Grab data
+  var info = manager.GetDeviceInfo(wurflRequest, new[] { "is_wireless_device", "is_smartphone", "physical_screen_width" });
+  var model = new DeviceInfoViewModel
+  {
+     DeviceId = info.Id,
+     UserAgent = ua,
+     ServerVersion = info.ServerVersion,
+     DateOfRequest = info.WurflLastUpdate.ToLongTimeString(),
+     CachingModule = manager.GetCachingModuleName(),
+     Library = manager.GetClientVersion(),
+     Capabilities = info.Capabilities,
+     Errors = info.Errors,
+     Source = info.ResponseOrigin
   };
   return model;
 }
@@ -54,19 +90,12 @@ public DeviceInfoViewModel GetDataByRequest(HttpContext context)
 
 The `CloudDemo\ViewModels\DeviceInfoViewModel` is a helper class that
 gathers information from the WURFL cloud client API and makes it ready
-for display. You can directly check a capability as below:
+for display. 
+
+You can directly check a capability as below:
 
 ```c#
 var isMobileAsText = info.Get("is_wireless_device"); // Returns a string!
-```
-
-If you want to test capabilities starting from a user agent string, you proceed as follows:
-
-```c#
-var ua = "apple iphone";
-var manager = new CloudClientManager(config);
-var wurflRequest = new WurflCloudRequest(context) {UserAgent = ua};
-var info = manager.GetDeviceInfo(context, new[] { "is_wireless_device", "model_name" });
 ```
 
 # Configuration

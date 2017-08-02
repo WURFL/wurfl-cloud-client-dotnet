@@ -1,3 +1,6 @@
+v1.3.0.2
+- FIX: CloudDemo project "Conflicting versions of ASP.NET" exception
+
 v1.3.0.1
 - FIX: syntax not backward compatible with VS2013
 
