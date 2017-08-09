@@ -22,10 +22,76 @@ for a free or paid WURFL Cloud account (see above).  When you've finished
 creating your account, you must copy your API Key, as it will be needed in
 the Client.
 
+### Get ScientiaMobile WURFL Cloud Client assembly
+You can get ScientiaMobile WURFL Cloud Client assembly in two ways:
+- by cloning this Github repo and building the *ScientiaMobile.WurflCloud* project from the *master* branch
+- by installing it as a [NuGet package] (https://www.nuget.org/packages/Wurfl_Official_Cloud_API/)
 
-## Integration
+In both cases you need to reference in your project the *ScientiaMobile.WurflCloud.dll* assembly along with
+the third party *Newtonsoft.Json.dll* 
+
+## Integration examples
+
+### Simple Console application
+Here's a quick example of how to get WurflCloud up and running in a Console Application.
+
+In your Console Application project, add *ScientiaMobile.WurflCloud.dll* *Newtonsoft.Json.dll* assemblies as reference.
+
+Add a new class to named *SimpleConsoleApplication* to your project with the following code.
+
+```
+using System;
+using System.Collections.Generic;
+using ScientiaMobile.WurflCloud;
+using ScientiaMobile.WurflCloud.Config;
+using ScientiaMobile.WurflCloud.Cache;
+using ScientiaMobile.WurflCloud.Device;
+
+namespace YourNameSpace
+{
+    class SimpleConsoleApplication
+    {
+        static void Main(string[] args)
+        {
+			// The User-Agent to detect
+            var ua = "Mozilla/5.0 (BlackBerry; U; BlackBerry 9800; en-US) AppleWebKit/534.8+ (KHTML, like Gecko) Version/6.0.0.466 Mobile Safari/534.8+";
+
+			// The WurflCloud configuration
+            var config = new DefaultCloudClientConfig
+            {
+				// Your API Key
+                ApiKey = "xxxxxx:yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+            };
+
+			// Configure CloudClientManager with no cache
+            var cache = new NoWurflCloudCache();
+
+            var manager = new CloudClientManager(config, cache);
+
+			// Get all static capability provided by your license
+            var capabilities = new string[0];
+
+			// Perform device detection using provided User-Agent
+            DeviceInfo di = manager.GetDeviceInfo(ua, capabilities);
+
+			// Write the detected Device Id
+            Console.WriteLine(di.Id);
+
+			// Write static capabilities name/value
+            foreach (KeyValuePair<string, string> entry in di.Capabilities)
+            {
+                Console.WriteLine(entry.Key + " " + entry.Value);
+            }
+			
+			Console.ReadKey();
+        }
+    }
+}
+```
+
+### Simple Web application
 You should review the included example (CloudDemo) to get a feel for
-the Client API, and how best to use it in your application.
+the Client API, and how best to use it in your web application.
 
 Here's a quick example of how to get up and running quickly:
 
@@ -96,7 +162,7 @@ You can directly check a capability as below:
 var isMobileAsText = info.Get("is_wireless_device"); // Returns a string!
 ```
 
-# Configuration
+## Configuration
 ---------------
 The public interface of the WURFL Cloud API is fairly simple and consists of a
 single class, `Client\WurflCloud\CloudClientManager`. The members of this class are:
@@ -157,7 +223,7 @@ Caching modules available:
  entry. By invalidating the helper cache entry, you can clear all cached
  data in a single shot.
 
-# Querying the Cloud Client API
+## Querying the Cloud Client API
 --------------
 To query the WURFL database in the cloud, you use the GetDeviceInfo method on the 
 `Client\WurflCloud\CloudClientManager` class. 
