@@ -39,7 +39,7 @@ In your Console Application project, add *ScientiaMobile.WurflCloud.dll* *Newton
 
 Add a new class to named *SimpleConsoleApplication* to your project with the following code.
 
-```
+```c#
 using System;
 using System.Collections.Generic;
 using ScientiaMobile.WurflCloud;
