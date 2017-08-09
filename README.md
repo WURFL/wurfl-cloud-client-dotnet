@@ -49,43 +49,43 @@ using ScientiaMobile.WurflCloud.Device;
 
 namespace YourNameSpace
 {
-    class SimpleConsoleApplication
+  class SimpleConsoleApplication
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-			// The User-Agent to detect
-            var ua = "Mozilla/5.0 (BlackBerry; U; BlackBerry 9800; en-US) AppleWebKit/534.8+ (KHTML, like Gecko) Version/6.0.0.466 Mobile Safari/534.8+";
-
-			// The WurflCloud configuration
-            var config = new DefaultCloudClientConfig
-            {
-				// Your API Key
-                ApiKey = "xxxxxx:yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
-            };
-
-			// Configure CloudClientManager with no cache
-            var cache = new NoWurflCloudCache();
-
-            var manager = new CloudClientManager(config, cache);
-
-			// Get all static capability provided by your license
-            var capabilities = new string[0];
-
-			// Perform device detection using provided User-Agent
-            DeviceInfo di = manager.GetDeviceInfo(ua, capabilities);
-
-			// Write the detected Device Id
-            Console.WriteLine(di.Id);
-
-			// Write static capabilities name/value
-            foreach (KeyValuePair<string, string> entry in di.Capabilities)
-            {
-                Console.WriteLine(entry.Key + " " + entry.Value);
-            }
-			
-			Console.ReadKey();
-        }
+      // The User-Agent to detect
+      var ua = "Mozilla/5.0 (BlackBerry; U; BlackBerry 9800; en-US) AppleWebKit/534.8+ (KHTML, like Gecko) Version/6.0.0.466 Mobile Safari/534.8+";
+      
+      // The WurflCloud configuration
+      var config = new DefaultCloudClientConfig
+      {
+        // Your API Key
+        ApiKey = "xxxxxx:yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+      };
+      
+      // Configure CloudClientManager with no cache
+      var cache = new NoWurflCloudCache();
+      
+      var manager = new CloudClientManager(config, cache);
+      
+      // Get all static capability provided by your license
+      var capabilities = new string[0];
+      
+      // Perform device detection using provided User-Agent
+      DeviceInfo di = manager.GetDeviceInfo(ua, capabilities);
+      
+      // Write the detected Device Id
+      Console.WriteLine(di.Id);
+      
+      // Write static capabilities name/value
+      foreach (KeyValuePair<string, string> entry in di.Capabilities)
+      {
+        Console.WriteLine(entry.Key + " " + entry.Value);
+      }
+      
+      Console.ReadKey();
     }
+  }
 }
 ```
 
