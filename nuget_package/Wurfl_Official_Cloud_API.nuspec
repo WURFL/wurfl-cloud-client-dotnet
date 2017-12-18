@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Wurfl_Official_Cloud_API</id>
-        <version>1.3.0.1</version>
+        <version>1.3.0.2</version>
         <title>The official WURFL Cloud API for .NET</title>
         <authors>ScientiaMobile,Inc.</authors>
         <licenseUrl>https://github.com/WURFL/wurfl-cloud-client-dotnet/blob/master/COPYING.txt</licenseUrl>
@@ -10,7 +10,9 @@
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <description>The official ASP.NET  WURFL Cloud API allows you to query the WURFL database without having to host the database in your applications. 
 This is beneficial because it guarantees that your WURFL data are always up to date. In addition, you don’t need to be concerned about distributing and synchronizing your WURFL data around the world: the WURFL cloud does it for you.</description>
-        <releaseNotes>WURFL Cloud Client 1.3.0.1:
+        <releaseNotes>WURFL Cloud Client 1.3.0.2:
+v1.3.0.2:
+- FIX: Strong-Named assembly
 v1.3.0.1:
 - FIX: syntax not backward compatible with VS2013
 v1.3.0.0:
