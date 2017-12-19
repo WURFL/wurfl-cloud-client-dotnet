@@ -38,7 +38,7 @@ namespace ScientiaMobile.WurflCloudTest_NUnit
 
             foreach (KeyValuePair<string, string> pair in di.Errors)
             {
-                if (pair.Value.Equals("No API key was provided"))
+                if (pair.Value.Equals("Invalid API key"))
                     apiKeyError = true;
             }
 

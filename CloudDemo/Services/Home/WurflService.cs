@@ -44,10 +44,9 @@ namespace CloudDemo.Services.Home
             };
 
             var manager = new CloudClientManager(config).SetCache(new MemoryWurflCloudCache());
-            var wurflRequest = new WurflCloudRequest(context) {UserAgent = ua};
 
             // Grab data
-            var info = manager.GetDeviceInfo(wurflRequest, new[] { "is_wireless_device", "is_smartphone", "physical_screen_width" });
+            var info = manager.GetDeviceInfo(ua, new[] { "is_wireless_device", "is_smartphone", "physical_screen_width" });
             var model = new DeviceInfoViewModel
                                 {
                                     DeviceId = info.Id,
