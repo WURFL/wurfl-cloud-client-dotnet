@@ -25,9 +25,11 @@ the Client.
 ### Get ScientiaMobile WURFL Cloud Client assembly
 You can get ScientiaMobile WURFL Cloud Client assembly in two ways:
 - by cloning this Github repo and building the *ScientiaMobile.WurflCloud* project from the *master* branch
-- by installing it as a [NuGet package] (https://www.nuget.org/packages/Wurfl_Official_Cloud_API/)
+- by installing it as a NuGet package. You can get the NuGet Package from:
+  - nuget.org (https://www.nuget.org/packages/Wurfl_Official_Cloud_API/)
+  - ScientiaMobile nuget server, setting up a new *Package Source* in Visual Studio pointing to https://nuget.scientiamobile.com/repository/wurfl-cloud/
 
-In both cases you need to reference in your project the *ScientiaMobile.WurflCloud.dll* assembly along with
+In all cases you need to reference in your project the *ScientiaMobile.WurflCloud.dll* assembly along with
 the third party *Newtonsoft.Json.dll* 
 
 ## Integration examples
