@@ -17,7 +17,7 @@ http://www.scientiamobile.com/cloud
  - `Newtonsoft.Json 4.5`
 
 ### Sign up for WURFL Cloud
-First, you must go to http://www.scientiamobile.com/cloud and signup
+First, you must go to https://www.scientiamobile.com/products/wurfl-cloud/ and signup
 for a free or paid WURFL Cloud account (see above).  When you've finished
 creating your account, you must copy your API Key, as it will be needed in
 the Client.
